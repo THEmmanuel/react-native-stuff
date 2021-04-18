@@ -1,12 +1,35 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
 
-const App = () => {
-    return (
+
+import React from 'react';
+import { View, Text, Image, ScrollView, TextInput } from 'react-native';
+
+const App = () => (
+    <ScrollView>
+        <Text>Some Text</Text>
         <View>
-            <Text>
-                Hello World!
-        </Text>
-        </View>)
-};
+            <Text>Some other text</Text>
+            <Image source={
+                { uri: 'https://reactnative.dev/docs/assets/p_cat2.png' }}
+                style={
+                    {
+                        width: 200,
+                        height: 200,
+                    }}
+            />
+        </View>
+
+        <TextInput
+            style={{
+                height: 40,
+                borderColor: 'gray',
+                borderWidth: 1,
+            }}
+
+            defaultValue="say something"
+        />
+    </ScrollView>
+);
+
 export default App;
