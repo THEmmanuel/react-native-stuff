@@ -2,22 +2,16 @@
 /* eslint-disable prettier/prettier */
 
 import React from 'react';
-import { View, Text } from 'react-native';
-
-const Cat = (props: any) => {
-    return (
-        <View>
-            <Text>Hello, I'm {props.name}</Text>
-        </View>
-    );
-};
+import { Text, View, Image } from 'react-native';
 
 const App = () => {
     return (
         <View>
-            <Cat name="Tom" />
-            <Cat name="Scott" />
-            <Cat name="Ginger" />
+            <Image
+                source={{ uri: 'https://reactnative.dev/docs/assets/p_cat1.png' }}
+                style={{ width: 200, height: 200 }}
+            />
+            <Text>Well, hello. I'm a cat!</Text>
         </View>
     );
 };
