@@ -2,18 +2,23 @@
 /* eslint-disable prettier/prettier */
 
 import React from 'react';
-import {Text} from 'react-native';
-
+import { Text, View, TextInput } from 'react-native';
 
 const App = () => {
-    const getFullName = (firstName : string, middleName: string, age: number) => {
-        return (`hi, I'm ${firstName} ${middleName} and I'm ${age} years old`);
-    };
-
     return (
-        <Text>
-            {getFullName('Emmanuel', 'Ayodele', 20)}
-        </Text>
+        <View>
+            <Text>Peace on earth!</Text>
+
+            <TextInput
+                style={{
+                    height: 40,
+                    borderColor: 'yellow',
+                    borderWidth: 1,
+                }}
+
+                defaultValue="hey ho!"
+            />
+        </View>
     );
 };
 
