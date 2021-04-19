@@ -1,33 +1,32 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 
-import React, {useState } from 'react';
-import { View, Text, Button } from 'react-native';
 
-const Cat = (props: any) => {
-    const [isHungry, setIsHungry] = useState(true);
-
-    return (
-        <View>
-            <Text>
-                Hi, I'm {props.name}, and i'm {isHungry ? 'hungry' : 'okay'}
-            </Text>
-
-            <Button
-                onPress={() => setIsHungry(false)}
-                disabled={!isHungry}
-                title={isHungry ? 'pour me some milk hooman!' : 'pfft, whatever'}
-            />
-        </View>
-    );
-};
+import React, { useState } from 'react';
+import { Text, View, TextInput } from 'react-native';
 
 const App = () => {
+    const [text, setText] = useState('');
+
     return (
-        <>
-            <Cat name="Tom" />
-            <Cat name="Ginger" />
-        </>
+        <View style={
+            {
+                padding: 10,
+            }}>
+            <TextInput
+                style={{ height: 40 }}
+                placeholder="Translate shit to pizza"
+                onChangeText={(currentText) => setText(currentText)}
+            />
+
+            <Text
+                style={{
+                    padding: 10,
+                    fontSize: 40,
+                }}>
+                {text.split(' ').map(word => word && '😆').join(' ')}
+            </Text>
+        </View>
     );
 };
 
