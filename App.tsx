@@ -2,32 +2,53 @@
 /* eslint-disable prettier/prettier */
 
 
-import React, { useState } from 'react';
-import { Text, View, TextInput } from 'react-native';
+import React from 'react';
+import { Text, ScrollView } from 'react-native';
+
+
 
 const App = () => {
-    const [text, setText] = useState('');
-
     return (
-        <View style={
-            {
-                padding: 10,
+        <ScrollView>
+            <Text style={{
+                fontSize: 45,
             }}>
-            <TextInput
-                style={{ height: 40 }}
-                placeholder="Translate shit to pizza"
-                onChangeText={(currentText) => setText(currentText)}
-            />
-
-            <Text
-                style={{
-                    padding: 10,
-                    fontSize: 40,
-                }}>
-                {text.split(' ').map(word => word && '😆').join(' ')}
+                50 porsche 911s
             </Text>
-        </View>
-    );
+
+            <Text style={{
+                fontSize: 90,
+            }}>
+                Porsche 911
+            </Text>
+
+            <Text style={{
+                fontSize: 90,
+            }}>
+                Porsche 911
+            </Text>
+
+            <Text style={{
+                fontSize: 90,
+            }}>
+                Porsche 911
+            </Text>
+
+            <Text style={{
+                fontSize: 90,
+            }}>
+                Porsche 911
+            </Text>
+
+            <Text style={{
+                fontSize: 90,
+            }}>
+                Porsche 911
+            </Text>
+
+
+        </ScrollView>);
 };
+
 
 export default App;
