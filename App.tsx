@@ -2,22 +2,22 @@
 /* eslint-disable prettier/prettier */
 
 import React from 'react';
-import { Text, View, TextInput } from 'react-native';
+import { View, Text } from 'react-native';
+
+const Cat = (props: any) => {
+    return (
+        <View>
+            <Text>Hello, I'm {props.name}</Text>
+        </View>
+    );
+};
 
 const App = () => {
     return (
         <View>
-            <Text>Peace on earth!</Text>
-
-            <TextInput
-                style={{
-                    height: 40,
-                    borderColor: 'yellow',
-                    borderWidth: 1,
-                }}
-
-                defaultValue="hey ho!"
-            />
+            <Cat name="Tom" />
+            <Cat name="Scott" />
+            <Cat name="Ginger" />
         </View>
     );
 };
