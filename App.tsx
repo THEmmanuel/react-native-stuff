@@ -1,54 +1,45 @@
-/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 
 
 import React from 'react';
-import { Text, ScrollView } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 
+const styles = StyleSheet.create(
+    {
+        container: {
+            flex: 1,
+            paddingTop: 22,
+        },
 
+        item: {
+            padding: 10,
+            fontSize: 18,
+            height: 44,
+        },
+    }
+);
 
 const App = () => {
     return (
-        <ScrollView>
-            <Text style={{
-                fontSize: 45,
-            }}>
-                50 porsche 911s
-            </Text>
-
-            <Text style={{
-                fontSize: 90,
-            }}>
-                Porsche 911
-            </Text>
-
-            <Text style={{
-                fontSize: 90,
-            }}>
-                Porsche 911
-            </Text>
-
-            <Text style={{
-                fontSize: 90,
-            }}>
-                Porsche 911
-            </Text>
-
-            <Text style={{
-                fontSize: 90,
-            }}>
-                Porsche 911
-            </Text>
-
-            <Text style={{
-                fontSize: 90,
-            }}>
-                Porsche 911
-            </Text>
-
-
-        </ScrollView>);
+        <View style={styles.container}>
+            <FlatList
+                data={
+                    [
+                        { key: 'Emmanuel' },
+                        { key: 'Ben' },
+                        { key: 'Jude' },
+                        { key: 'Mark' },
+                        { key: 'Luna' },
+                        { key: 'Drew' },
+                        { kwy: 'Seun' },
+                        { key: 'Jimmy' },
+                    ]
+                }
+                // renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+                renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
+            />
+        </View>
+    );
 };
-
 
 export default App;
