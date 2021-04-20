@@ -1,53 +1,44 @@
 /* eslint-disable prettier/prettier */
 
 import React from 'react';
-import { SectionList, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        paddingTop: 22,
+        marginTop: 50,
+        backgroundColor: '#FFFFFF',
     },
 
-    sectionHeader: {
-        paddingTop: 2,
-        paddingLeft: 10,
-        paddingRight: 10,
-        paddingBottom: 2,
-        fontSize: 14,
+    red: {
+        color: 'red',
+    },
+
+    bigBlue: {
+        color: 'blue',
         fontWeight: 'bold',
-        backgroundColor: '#e2e2e2',
+        fontSize: 30,
     },
 
-    item: {
-        padding: 10,
-        fontSize: 18,
-        height: 44,
-    },
 });
-
 
 const App = () => {
     return (
         <View style={styles.container}>
-            <SectionList sections={
-                [
-                    { title: 'D', data: ['Dan', 'Devin', 'Dummy'] },
-                    { title: 'E', data: ['Emmanuel', 'Ella', 'Eugene'] },
-                ]
-            }
-                renderItem={({ item }) => <Text style={styles.item}>
-                    {item}
-                </Text>}
+            <Text style={styles.red}>
+                This will be red!
+            </Text>
 
-                renderSectionHeader={({ section }) => <Text style={styles.sectionHeader}>
-                    {section.title}
-                </Text>}
+            <Text style={styles.bigBlue}>
+                Big and bloo!
+            </Text>
 
-                keyExtractor={(item, index) => index}
+            <Text style={[styles.bigBlue, styles.red]}>
+                First, I'll be big and bloo! and then turn red!
+            </Text>
 
-            />
-
+            <Text style={[styles.red, styles.bigBlue]}>
+                Red, then big 'n bloo!
+            </Text>
         </View>
     );
 };
